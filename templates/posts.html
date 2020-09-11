@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Posts{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+<div class='my-3'>
+{% with articles=articles  %}
+    {% include "_list.html" %}
+{% endwith %}
+</div>
+{% endblock %}

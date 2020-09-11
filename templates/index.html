@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+<div class="row my-3" id="page-content">
+        <div class='col-sm-8'>
+            <div class="card square mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Jay Simpson - Full Stack Developer</h4>
+                </div>
+                <div class="card-body">
+                   <h6>Results-oriented, indepent, full stack developer with extensive experience in complex relational databases and multiple programming languages.</h6>
+                   <h6>Seeking remote-only positions with teams that work on products they're actually excited about.</h6>
+                   <hr>
+                   <!-- github stuff. -->
+                   {{ render_static('js', 'js/github-calendar.min.js') }}
+                        <div class="calendar">
+                        <!-- Loading stuff -->
+                            Loading the data just for you.
+                        </div>
+                        <script>
+                        
+                        GitHubCalendar(".calendar", "justJay-dev", { responsive: true });
+                        </script>
+                </div>
+            </div>
+            <div class="card square mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Projects</h4>
+                </div>
+                <div class="card-body">
+                    <p>Below are 4 recent projects, you can find the rest of them <a href="{{ url_for('posts') }}" class='btn btn-primary'>here.</a> </p>
+                </div>
+            </div>
+
+            {% with articles=articles  %}
+                {% include "_list.html" %}
+            {% endwith %}
+
+        </div>
+        <div class='col-sm-4'>
+            <div class="card square mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Contact Me</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled my-3">
+                        <li><a href='https://github.com/justJay-dev' target='_blank' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/world_network_directories-1.png'> Github</a></li>
+                        <li><a href='https://www.linkedin.com/in/jimmysimpson3/' target='_blank' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/msie1-4.png'> LinkedIn</a></li>
+                        <li><a href='mailto:hire-me@lowbrowlabs.com' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/laptop_infrared-2.png'> Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card square mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Languages</h4>
+                </div>
+                <div class="card-body">
+                    {% include '_languages.html' %}
+                </div>
+            </div>
+            <div class="card square mb-4">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Frameworks / Tooling</h4>
+                </div>
+                <div class="card-body">
+                   {% include '_frameworks.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

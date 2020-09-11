@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}{{page.title}}{% endblock %}
+{% block head %}
+  {{ super() }}
+
+{% endblock %}
+{% block content %}
+<div class="card square my-3">
+  <div class="card-header">
+      <h4 class="my-0 font-weight-normal">{{ page.title }}</h4>
+  </div>
+  <div class="card-body">
+    {{ page.html|safe }}
+</div>
+   
+{% endblock %}
