@@ -1,7 +1,7 @@
 title: SaferWebAPI.com  
 published: 2020-8-11  
 tags: [Python, Flask, PostgreSQL, REST, API, SaaS]  
-descr: A subscription based platform that gives rest api access to a publicly available federal transportation database that does not have a native API. Leverages google cloud and python to crawl, scrape abd store results. Returns them to authenticated users in json format with very low latency.  1.6 million USDOT queries so far.
+descr: A subscription based platform that gives rest api access to a publicly available federal transportation database that does not have a native API. Leverages google cloud and python to crawl, scrape and store results. Returns them to authenticated users in json format with very low latency.  1.6 million USDOT queries so far.
 
 
 

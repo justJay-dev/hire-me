@@ -13,13 +13,20 @@
     {{ bootstrap.load_css() }}
     {{ render_static('css', 'css/win95.css') }}
     {{ render_static('css', 'css/github.css') }}
+    {{ render_static('css','css/screensaver.css') }}
     <link rel="stylesheet" href="{{ url_for('pygments_css')  }}">
+
     {% endblock %}
 
     <title>{{blog_name}}</title>
     {% endblock %}
   </head>
   <body>
+
+<canvas style="display:none" id="c"></canvas>
+
+    {{ render_static('js', 'js/screensaver.js') }}
+    <div id='desktop'>
     <nav class="navbar navbar-expand-lg navbar-light navbar-95 ">
         <a class="navbar-brand" href="#">
             <img src="static/icons/computer-3.png"></a>
@@ -37,8 +44,10 @@
     <main class='container'>
     {% block content %}{% endblock %}
     </main>
+
     {% block scripts %}
     <!-- Optional JavaScript -->
     {{ bootstrap.load_js() }}
     {% endblock %}
+    </div>
   </body>
