@@ -1,5 +1,13 @@
 flask
+wheel
 bootstrap-flask
+flask-sqlalchemy
 Flask-FlatPages
+flask-wtf
+flask-simple-geoip
+email_validator
+flask-mail
+pg8000
 Pygments
 Markdown
+gunicorn

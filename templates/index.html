@@ -1,3 +1,4 @@
+{% from 'bootstrap/form.html' import render_field %}
 {% extends "layout.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
@@ -9,7 +10,7 @@
         <div class='col-sm-8'>
             <div class="card square mb-4">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Jay Simpson - Full Stack Developer</h4>
+                      <h4 class="my-0 font-weight-normal">Jay Simpson - Full Stack Developer</h4>
                 </div>
                 <div class="card-body">
                    <h6>Results-oriented, indepent, full stack developer with extensive experience in complex relational databases and multiple programming languages.</h6>
@@ -42,6 +43,24 @@
 
         </div>
         <div class='col-sm-4'>
+            <div class='card square mb-4'>
+              <div class='card-header'>
+                <h4 class='my-0 font-weight-normal'>Welcome! </h4>
+              </div>
+              <div class='card-body'>
+                <div class='row'>
+                  <div class='col-sm'>
+                    <p>You are visitor #:<p>
+                    {% for character in character_list %}
+                      <span class='py-1 px-1 border border-dark bg-dark text-hackerman'> {{ character }}</span>
+                    {%endfor%}
+                  </div>
+                  <div class='col-sm'>
+                    <img class='blink img-fluid float-right' src='static/img/underconstruction.png'>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="card square mb-4">
                 <div class="card-header">
                     <h4 class="my-0 font-weight-normal">Contact Me</h4>
@@ -50,8 +69,31 @@
                     <ul class="list-unstyled my-3">
                         <li><a href='https://github.com/justJay-dev' target='_blank' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/world_network_directories-1.png'> Github</a></li>
                         <li><a href='https://www.linkedin.com/in/jimmysimpson3/' target='_blank' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/msie1-4.png'> LinkedIn</a></li>
-                        <li><a href='mailto:hire-me@lowbrowlabs.com' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/laptop_infrared-2.png'> Email</a></li>
+                        <li><a href='#'data-target='#contactModal'data-toggle='modal' class='btn btn-lg btn-primary btn-block'><img class='icon-16'src='static/icons/laptop_infrared-2.png'> Email</a></li>
                     </ul>
+                    <div class='modal fade ' id='contactModal' tabindex='-1'>
+                      <div class='modal-dialog'>
+                        <div class='modal-content border rounded-0'>
+                          <div class='modal-header border rounded-0'>
+                            <h5 class='modal-title' id='contactModalTitle'>Contact me!</h5>
+                            <button type='button' class='btn' data-mismiss='modal'>
+                              <span>&times;</span>
+                            </button>
+                          </div>
+                          <div class='modal-body'>
+                            <form action ="{{ url_for('system_contact_submit') }}" method='POST'>
+                              {{ contact_form.csrf_token }}
+                              {{ render_field(contact_form.email) }}
+                              {{ render_field(contact_form.message) }}
+                          </div>
+                          <div class='modal-footer'>
+                            <button type='submit' class='btn btn-primary'>Submit</button>
+                            </form>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </div>
             <div class="card square mb-4">
