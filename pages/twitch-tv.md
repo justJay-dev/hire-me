@@ -12,17 +12,17 @@ It's important to me that my broadcasts are as entertaining as they are informat
 <div class='row'>
 	<div class='col-sm'>
 	<p>Chat convinces me to run a VIM command that ROT13 shifts my entire editor</p>
-		<iframe src="https://clips.twitch.tv/embed?clip=SlickImpartialCroquetteMingLee&parent=localhost&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no"> </iframe>
+		<iframe src="https://clips.twitch.tv/embed?clip=SlickImpartialCroquetteMingLee&parent=lowbrowlabs.com&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no"> </iframe>
 	</div>
 
 	<div class='col-sm'>
 	<p>During a coaching session on Flask, the person I am teaching live corrects my spelling</p>
-		<iframe src="https://clips.twitch.tv/embed?clip=HandsomeAbstemiousAardvarkDAESuppy&parent=localhost&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" ></iframe>
+		<iframe src="https://clips.twitch.tv/embed?clip=HandsomeAbstemiousAardvarkDAESuppy&parent=lowbrowlabs.com&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" ></iframe>
 
 	</div>
 	<div class='col-sm'>
 	<p>We blow up our database connection, and I jump cut to my "fail" screen </p>	
-		<iframe src="https://clips.twitch.tv/embed?clip=CleanResourcefulYakinikuBatChest&parent=localhost&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" ></iframe>
+		<iframe src="https://clips.twitch.tv/embed?clip=CleanResourcefulYakinikuBatChest&parent=lowbrowlabs.com&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" ></iframe>
 	</div>
 
 </div>

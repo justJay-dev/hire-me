@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from flask_simple_geoip import SimpleGeoIP
 
-debug = True
+debug = False
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
