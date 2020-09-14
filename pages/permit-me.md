@@ -1,7 +1,7 @@
 title : PermitMe - iOS and Android Applications
 published: 2020-7-4
 tags: [iOS, Android, JavaScript, Apache Cordova] 
-desc: Mobile applications to onboard new customers and provide permits to existing customers.
+descr: Mobile applications to onboard new customers and provide permits to existing customers. 
 
 
 Built in JavaScript / Apache Cordova  

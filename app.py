@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from flask_simple_geoip import SimpleGeoIP
 
-debug = False
+debug = True
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
@@ -43,11 +43,12 @@ def error_500(e):
 @app.route('/')
 def index():
     contact_form = ContactForm()
-    geoip_data = simple_geoip.get_geoip_data()
-    geo = f"{geoip_data['location']['country']}, {geoip_data['location']['region']}, {geoip_data['location']['city']}"
-    new_count = Count(geo = geo, agent = request.headers.get('User-Agent'))
-    db.session.add(new_count)
-    db.session.commit()
+    if not debug:
+        geoip_data = simple_geoip.get_geoip_data()
+        geo = f"{geoip_data['location']['country']}, {geoip_data['location']['region']}, {geoip_data['location']['city']}"
+        new_count = Count(geo = geo, agent = request.headers.get('User-Agent'))
+        db.session.add(new_count)
+        db.session.commit()
     # Get current page count
     count = Count.query.count()
     character_list = list(str(count))
