@@ -67,3 +67,6 @@ MAIL_PASSWORD = "your_sendgrid_password"
 MAIL_DEFAULT_SENDER = 'your_default_sender'
 MAIL_MAX_EMAILS = 'None'
 MAIL_ASCII_ATTACHMENTS = 'False'
+
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ''

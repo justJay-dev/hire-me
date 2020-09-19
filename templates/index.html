@@ -85,6 +85,7 @@
                               {{ contact_form.csrf_token }}
                               {{ render_field(contact_form.email) }}
                               {{ render_field(contact_form.message) }}
+                              {{ render_field(contact_form.recaptcha) }}
                           </div>
                           <div class='modal-footer'>
                             <button type='submit' class='btn btn-primary'>Submit</button>
