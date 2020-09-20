@@ -84,7 +84,7 @@ def tag(tag):
 @app.route('/system/contact', methods=['POST'])
 def system_contact_submit():
     contact_form = ContactForm()
-    if contact_form.validate_on_submit:
+    if contact_form.validate_on_submit():
         #this is where email sending happens
         #FlaskMail - > SendGrid
         subject = f'Message from {contact_form.email.data}'
