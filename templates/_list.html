@@ -1,23 +1,26 @@
 {% for page in articles %}
 <div class="card square mb-4">
-    <div class="card-header">
-        <h4 class="my-0 font-weight-normal"><a href="{{ url_for("page", path=page.path) }}" class='text-white'>{{ page.title }}</a></h4>
-    </div>
-    <div class="card-body">
-        {% if page.descr %}
-            <p>{{ page.descr }}</p>
-            
-        {% endif %}
-        {% if page.meta.tags|length %}
-        Tags:
-            {% for page_tag in page.meta.tags %}
-                <a href="{{ url_for("tag", tag=page_tag) }}">#{{ page_tag }}</a>
-            {% endfor %}
-        {% endif %}
-    </div>
-    <div class ='card-footer'>
-        <a href="{{ url_for("page", path=page.path) }}" class='btn btn-primary'>Read more</a>
-    </div>
+  <div class="card-header">
+    <h4 class="my-0 font-weight-normal">
+      <a href="{{ url_for('page', path=page.path) }}" class="text-white"
+        >{{ page.title }}</a
+      >
+    </h4>
+  </div>
+  <div class="card-body">
+    {% if page.descr %}
+    <p>{{ page.descr }}</p>
+
+    {% endif %} {% if page.meta.tags|length %} Tags: {% for page_tag in
+    page.meta.tags %}
+    <a href="{{ url_for('tag', tag=page_tag) }}">#{{ page_tag }}</a>
+    {% endfor %} {% endif %}
+  </div>
+  <div class="card-footer">
+    <a href="{{ url_for('page', path=page.path) }}" class="btn btn-primary"
+      >Read more</a
+    >
+  </div>
 </div>
 
 {% endfor %}

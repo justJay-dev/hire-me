@@ -1,22 +1,23 @@
-{% from 'bootstrap/nav.html' import render_nav_item %}
-{% from 'bootstrap/utils.html' import render_static %}
-<!doctype html>
+{% from 'bootstrap/nav.html' import render_nav_item %} {% from
+'bootstrap/utils.html' import render_static %}
+<!DOCTYPE html>
 <html lang="en">
   <head>
     {% block head %}
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     {% block styles %}
     <!-- Bootstrap CSS -->
-    {{ bootstrap.load_css() }}
-    {{ render_static('css', 'css/win95.css') }}
-    {{ render_static('css', 'css/github.css') }}
-    {{ render_static('css', 'css/screensaver.css') }}
-    {{ render_static('css', 'css/blink.css') }}
-    {{ render_static('css', 'css/pipes.css')}}
-    <link rel="stylesheet" href="{{ url_for('pygments_css')  }}">
+    {{ bootstrap.load_css() }} {{ render_static('css', 'css/win95.css') }} {{
+    render_static('css', 'css/github.css') }} {{ render_static('css',
+    'css/screensaver.css') }} {{ render_static('css', 'css/blink.css') }} {{
+    render_static('css', 'css/pipes.css')}}
+    <link rel="stylesheet" href="{{ url_for('pygments_css')  }}" />
 
     {% endblock %}
 
@@ -24,77 +25,75 @@
     {% endblock %}
   </head>
   <body>
-    {{ render_static('js', 'js/sri-fallback.js') }}
-    {{ render_static('js', 'js/three.min.js') }}
-    {{ render_static('js', 'js/OrbitControls.js') }}
-    {{ render_static('js', 'js/TeapotBufferGeometry.js') }}
-    <div class="controls ui-container " style='display:none'>
-        <button id="fullscreen-button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.543 438.543">
-            <path
-              d="M407.42 159.029c3.62 3.616 7.898 5.428 12.847 5.428 2.282 0 4.668-.476 7.139-1.429 7.426-3.235 11.136-8.853 11.136-16.846V18.276c0-4.949-1.807-9.231-5.428-12.847-3.61-3.617-7.898-5.424-12.847-5.424H292.36c-7.991 0-13.607 3.805-16.848 11.419-3.23 7.423-1.902 13.99 4 19.698l41.111 41.112-101.352 101.355L117.917 72.231l41.112-41.112c5.901-5.708 7.232-12.275 3.999-19.698C159.789 3.807 154.175 0 146.182 0H18.276C13.324 0 9.041 1.809 5.425 5.426 1.808 9.042.001 13.324.001 18.273V146.18c0 7.996 3.809 13.61 11.419 16.846 2.285.948 4.57 1.429 6.855 1.429 4.948 0 9.229-1.812 12.847-5.427l41.112-41.109 101.354 101.354L72.234 320.622l-41.112-41.113c-5.711-5.903-12.275-7.231-19.702-4.001C3.806 278.749.001 284.364.001 292.362v127.906c0 4.948 1.807 9.229 5.424 12.847 3.619 3.614 7.902 5.421 12.851 5.421h127.906c7.996 0 13.61-3.806 16.846-11.416 3.234-7.427 1.903-13.99-3.999-19.705l-41.112-41.106L219.271 264.95l101.353 101.361-41.114 41.11c-5.899 5.708-7.228 12.279-3.997 19.698 3.237 7.617 8.856 11.423 16.851 11.423h127.907c4.948 0 9.232-1.813 12.847-5.428 3.613-3.613 5.42-7.898 5.42-12.847V292.362c0-7.994-3.709-13.613-11.136-16.851-7.802-3.23-14.462-1.903-19.985 4.004l-41.106 41.106-101.359-101.35L366.31 117.917l41.11 41.112z"
-              fill="#FFF"
-            />
-          </svg>
-        </button>
-        <label>
-          <select id="joint-types">
-          </select>
-        </label>
-        <button id="toggle-controls">
-        </button>
-        <table>
-          <thead>
-            <tr>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="normal-controls-enabled">
-            </tr>
-            <tr class="normal-controls-enabled">
-            </tr>
-            <tr hidden class="orbit-controls-enabled">
-            </tr>
-            <tr hidden class="orbit-controls-enabled">
-            </tr>
-            <tr hidden class="orbit-controls-enabled">
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    <div id="canvas-container" style="display:none">
-        <canvas id="canvas-webgl"></canvas>
-        <canvas id="canvas-2d" style="pointer-events: none"></canvas>
+    {{ render_static('js', 'js/sri-fallback.js') }} {{ render_static('js',
+    'js/three.min.js') }} {{ render_static('js', 'js/OrbitControls.js') }} {{
+    render_static('js', 'js/TeapotBufferGeometry.js') }}
+    <div class="controls ui-container" style="display: none">
+      <button id="fullscreen-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438.543 438.543">
+          <path
+            d="M407.42 159.029c3.62 3.616 7.898 5.428 12.847 5.428 2.282 0 4.668-.476 7.139-1.429 7.426-3.235 11.136-8.853 11.136-16.846V18.276c0-4.949-1.807-9.231-5.428-12.847-3.61-3.617-7.898-5.424-12.847-5.424H292.36c-7.991 0-13.607 3.805-16.848 11.419-3.23 7.423-1.902 13.99 4 19.698l41.111 41.112-101.352 101.355L117.917 72.231l41.112-41.112c5.901-5.708 7.232-12.275 3.999-19.698C159.789 3.807 154.175 0 146.182 0H18.276C13.324 0 9.041 1.809 5.425 5.426 1.808 9.042.001 13.324.001 18.273V146.18c0 7.996 3.809 13.61 11.419 16.846 2.285.948 4.57 1.429 6.855 1.429 4.948 0 9.229-1.812 12.847-5.427l41.112-41.109 101.354 101.354L72.234 320.622l-41.112-41.113c-5.711-5.903-12.275-7.231-19.702-4.001C3.806 278.749.001 284.364.001 292.362v127.906c0 4.948 1.807 9.229 5.424 12.847 3.619 3.614 7.902 5.421 12.851 5.421h127.906c7.996 0 13.61-3.806 16.846-11.416 3.234-7.427 1.903-13.99-3.999-19.705l-41.112-41.106L219.271 264.95l101.353 101.361-41.114 41.11c-5.899 5.708-7.228 12.279-3.997 19.698 3.237 7.617 8.856 11.423 16.851 11.423h127.907c4.948 0 9.232-1.813 12.847-5.428 3.613-3.613 5.42-7.898 5.42-12.847V292.362c0-7.994-3.709-13.613-11.136-16.851-7.802-3.23-14.462-1.903-19.985 4.004l-41.106 41.106-101.359-101.35L366.31 117.917l41.11 41.112z"
+            fill="#FFF"
+          />
+        </svg>
+      </button>
+      <label>
+        <select id="joint-types"></select>
+      </label>
+      <button id="toggle-controls"></button>
+      <table>
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody>
+          <tr class="normal-controls-enabled"></tr>
+          <tr class="normal-controls-enabled"></tr>
+          <tr hidden class="orbit-controls-enabled"></tr>
+          <tr hidden class="orbit-controls-enabled"></tr>
+          <tr hidden class="orbit-controls-enabled"></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="canvas-container" style="display: none">
+      <canvas id="canvas-webgl"></canvas>
+      <canvas id="canvas-2d" style="pointer-events: none"></canvas>
     </div>
     <!--dammit kyle-->
-    {{ render_static('js', 'js/pipes.js') }}
-    {{ render_static('js', 'js/konami.js') }}
-    <canvas style="display:none" id="c"></canvas>
+    {{ render_static('js', 'js/pipes.js') }} {{ render_static('js',
+    'js/konami.js') }}
+    <canvas style="display: none" id="c"></canvas>
 
     {{ render_static('js', 'js/screensaver.js') }}
 
-    <div id='desktop'>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-95 ">
+    <div id="desktop">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-95">
         <a class="navbar-brand" href="#">
-		<img src="{{url_for('static', filename='icons/computer-3.png')}}"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <img src="{{url_for('static', filename='icons/computer-3.png')}}"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                {{ render_nav_item('index', 'Home') }}
-                {{ render_nav_item('posts', 'Projects') }}
-            </ul>
+          <ul class="navbar-nav">
+            {{ render_nav_item('index', 'Home') }} {{ render_nav_item('posts',
+            'Projects') }}
+          </ul>
         </div>
-    </nav>
-    <!-- Your page content -->
-    <main class='container'>
-    {% block content %}{% endblock %}
-    </main>
+      </nav>
+      <!-- Your page content -->
+      <main class="container">{% block content %}{% endblock %}</main>
 
-    {% block scripts %}
-    <!-- Optional JavaScript -->
-    {{ bootstrap.load_js() }}
-    {% endblock %}
+      {% block scripts %}
+      <!-- Optional JavaScript -->
+      {{ bootstrap.load_js() }} {% endblock %}
     </div>
   </body>
+</html>
